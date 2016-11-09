@@ -5,4 +5,4 @@ spring:
     stream:
       bindings:
         input: reservations
-message: Hello my friend from department store!
+message: Reservation service config file.
