@@ -1,0 +1,3 @@
+server.port:8000
+spring.cloud.stream.bindings.input:"reservations"
+message:ello my friend from department store!
