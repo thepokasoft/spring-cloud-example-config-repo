@@ -1,8 +1,8 @@
 server:
-  port: 8000
+	port: 8000
 spring:
-  cloud:
-    stream:
-      bindings:
-        input: reservations
+	cloud:
+		stream:
+			bindings:
+				input: reservations
 message: Hello my friend from department store!
