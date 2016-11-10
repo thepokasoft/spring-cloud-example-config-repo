@@ -1,2 +1,13 @@
 server:
   port: 9999
+spring:
+  cloud:
+    stream:
+      bindings:
+        output: reservations
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
