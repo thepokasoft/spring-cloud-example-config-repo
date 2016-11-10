@@ -4,5 +4,6 @@ spring:
   cloud:
     stream:
       bindings:
-        input: reservations
+        input:
+          destination: reservations
 message: Hi from reservation service!
