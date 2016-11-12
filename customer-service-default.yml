@@ -46,7 +46,7 @@ logging:
 
 ---
 spring:
-  profiles: mysql
+  profiles: default
   datasource:
     url: jdbc:mysql//localhost:3306/Customer
     username: root
