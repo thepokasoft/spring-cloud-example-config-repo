@@ -11,7 +11,6 @@ ribbon:
   eureka:
     enabled: true
 neo4j:
-  uri: http://localhost:7474/recommendation/
+  uri: http://localhost:7474/
   username: neo4j
   password: root
-  bootstrap: true
