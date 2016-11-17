@@ -28,3 +28,8 @@ eureka:
 logging:
   level:
     com.netflix.discovery: 'OFF'
+
+turbine:
+  appConfig: movie-service
+  stream:
+    port: 8989
