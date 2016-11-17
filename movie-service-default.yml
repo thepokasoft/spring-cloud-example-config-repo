@@ -30,5 +30,8 @@ logging:
     com.netflix.discovery: 'OFF'
 
 turbine:
+  aggregator:
+    clusterConfig: MOVIE-SERVICE
+  appConfig: movie-service
   stream:
    port: 8989
