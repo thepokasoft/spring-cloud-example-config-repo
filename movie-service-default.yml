@@ -31,7 +31,6 @@ logging:
 
 turbine:
   aggregator:
-    clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
     appConfig: movie-service
   stream:
    port: 8989
