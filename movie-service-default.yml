@@ -33,3 +33,5 @@ turbine:
   aggregator:
     clusterConfig: MOVIE-SERVICE
   appConfig: movie-service
+  stream:
+   port: 8988
