@@ -1,55 +1,6 @@
 server:
   port: 8001
 
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
-
-integration:
-  stores:
-    uri: http://localhost:8002
-    test: '{cipher}316f8cdbb776c23e679bf209014788a6eab7522f48f97114328c2c9388e6b3c1'
-
-stores:
-  ribbon:
-    ServerListRefreshInterval: 1000
-
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    metadataMap:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
-  client:
-    region: default
-    registryFetchIntervalSeconds: 5
-    availabilityZones:
-      default: ${APPLICATION_DOMAIN:${DOMAIN:defaultZone}}
-
-# For demo only allow more hystrix connections
-hystrix:
-  stream:
-    maxConcurrentConnections: 20
-    bus:
-      enabled: true
-
-# spring:
-#   rabbitmq:
-#     addresses: ${vcap.services.${PREFIX:}rabbitmq.credentials.uri:amqp://${RABBITMQ_HOST:localhost}:${RABBITMQ_PORT:5672}}
-spring:
-  rabbitmq:
-    host: mybroker.com
-    port: 5672
-    username: user
-    password: secret
-logging:
-  level:
-    com.netflix.discovery: 'OFF'
-
----
 spring:
   profiles: default
   datasource:

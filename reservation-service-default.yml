@@ -1,9 +1,0 @@
-server:
-  port: 8000
-spring:
-  cloud:
-    stream:
-      bindings:
-        input:
-          destination: reservations
-message: Hi from reservation service!
