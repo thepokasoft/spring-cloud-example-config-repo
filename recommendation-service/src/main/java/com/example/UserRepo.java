@@ -11,6 +11,13 @@ import org.springframework.data.neo4j.repository.GraphRepository;
  *
  * @author milandeket
  */
-public interface UserRepo extends GraphRepository<User>{
-    
+public interface UserRepo {
+
+	Iterable<User> findAll();
+
+	User findOne(Long userId);
+
+	void deleteAll();
+
+	void save(User user);
 }

@@ -7,11 +7,19 @@ package com.example;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
+import java.util.Collection;
+
 /**
  *
  * @author milandeket
  */
 
-public interface MovieRepo extends MongoRepository<Movie, String>{
+public interface MovieRepo{
     public Movie findByMovieId(Long movieId);
+
+    Collection<Movie> findAll();
+
+    void deleteAll();
+
+    void save(Movie the_shawshank_redemption);
 }

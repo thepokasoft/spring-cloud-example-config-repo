@@ -77,5 +77,11 @@ public class Movie {
     public void setGraphId(Long graphId) {
         this.graphId = graphId;
     }
-    
+
+    public Movie(Long graphId, Long id, List<User> likes, List<User> dislikes) {
+        this.graphId = graphId;
+        this.id = id;
+        this.likes = likes;
+        this.dislikes = dislikes;
+    }
 }

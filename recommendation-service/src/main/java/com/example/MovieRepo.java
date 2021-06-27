@@ -13,18 +13,26 @@ import org.springframework.data.neo4j.repository.GraphRepository;
  *
  * @author milandeket
  */
-public interface MovieRepo extends GraphRepository<Movie>{
+public interface MovieRepo {
 
-    @Query("MATCH (follower:User)-[f:FOLLOWING]->(u:User)-[l:LIKES]->(m:Movie) "
-            + "WHERE follower.id = {0} "
-            + "RETURN m.id as id, count(l) as likes "
-            + "ORDER BY likes DESC "
-            + "LIMIT 5")
+//    @Query("MATCH (follower:User)-[f:FOLLOWING]->(u:User)-[l:LIKES]->(m:Movie) "
+//            + "WHERE follower.id = {0} "
+//            + "RETURN m.id as id, count(l) as likes "
+//            + "ORDER BY likes DESC "
+//            + "LIMIT 5")
     public List<RecommendationData> getRecommendationForUser(Long followerID);
     
-    @Query("MATCH (m:Movie)<-[l:LIKES]-(u:User) "
-            + "RETURN m.id as id, count(l) as likes "
-            + "ORDER BY likes DESC "
-            + "LIMIT 5")
+//    @Query("MATCH (m:Movie)<-[l:LIKES]-(u:User) "
+//            + "RETURN m.id as id, count(l) as likes "
+//            + "ORDER BY likes DESC "
+//            + "LIMIT 5")
     public List<RecommendationData> getTopFiveMovies();
+
+    Iterable<Movie> findAll();
+
+    void deleteAll();
+
+    void save(Movie movie);
+
+    Movie findOne(Long movieId);
 } 

@@ -88,4 +88,11 @@ public class User {
         this.following = following;
     }
 
+    public User(Long graphId, Long id, String name, List<User> following, List<Movie> likes) {
+        this.graphId = graphId;
+        this.id = id;
+        this.name = name;
+        this.following = following;
+        this.likes = likes;
+    }
 }
